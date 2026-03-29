@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Riviere Building ID Sign — Quote Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8985A;
+    --gold-light: #D4B87A;
+    --gold-pale: #F5EDD8;
+    --dark: #1A1A18;
+    --mid: #3A3A36;
+    --muted: #7A7A72;
+    --rule: #D8D0BC;
+    --bg: #FAFAF7;
+    --white: #FFFFFF;
+    --green: #2E6B4A;
+    --green-pale: #EAF3ED;
+    --amber: #8A5E1A;
+    --amber-pale: #FBF3E2;
+    --red: #8A2E2E;
+    --red-pale: #FAE8E8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── COVER ─────────────────────────────── */
+  .cover {
+    background: var(--dark);
+    color: var(--white);
+    padding: 64px 72px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 60px,
+      rgba(184,152,90,0.04) 60px,
+      rgba(184,152,90,0.04) 61px
+    );
+  }
+  .cover-inner { position: relative; z-index: 1; }
+  .cover-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .cover-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+    font-variant-numeric: lining-nums;
+  }
+  .cover-title span {
+    color: var(--gold-light);
+  }
+  .cover-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(184,152,90,0.3);
+  }
+  .cover-meta-item { }
+  .cover-meta-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .cover-meta-value {
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  /* ── MAIN LAYOUT ────────────────────────── */
+  .main { padding: 0 72px 72px; }
+
+  /* ── SECTION HEADS ──────────────────────── */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 52px 0 24px;
+  }
+  .section-num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--dark);
+    font-variant-numeric: lining-nums;
+  }
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    margin-bottom: 4px;
+  }
+
+  /* ── PRICE CARDS ────────────────────────── */
+  .price-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .price-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 28px 24px 24px;
+    position: relative;
+  }
+  .price-card.winner {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, #FFFCF5 0%, #FFF8E8 100%);
+  }
+  .price-card.winner::before {
+    content: 'LOWEST PRICE';
+    position: absolute;
+    top: -1px; right: 20px;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    font-weight: 500;
+  }
+  .card-supplier {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .card-name {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dark);
+    font-variant-numeric: lining-nums;
+  }
+  .card-price {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: lining-nums;
+  }
+  .price-card.winner .card-price { color: var(--amber); }
+  .card-excl {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .card-divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 16px 0;
+  }
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card-row strong { color: var(--dark); font-weight: 500; }
+  .card-quote-ref {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+  }
+  .card-pdf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    border: 1px solid var(--gold);
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .card-pdf-link:hover {
+    background: var(--gold);
+    color: var(--white);
+  }
+  .card-pdf-link svg { flex-shrink: 0; }
+
+  .card-contact {
+    margin-top: 4px;
+  }
+  .card-contact-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 3px;
+  }
+  .card-contact-detail {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .card-contact-detail a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .card-contact-detail a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+
+  /* ── SPEC OVERVIEW ──────────────────────── */
+  .spec-overview {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 28px 32px 24px;
+  }
+  .spec-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .spec-item {
+    display: flex;
+    gap: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .spec-item:nth-child(odd):last-child,
+  .spec-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+  .spec-label {
+    width: 140px;
+    flex-shrink: 0;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding-top: 1px;
+    padding-right: 16px;
+  }
+  .spec-value {
+    color: var(--dark);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--rule);
+  }
+  .comp-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule);
+    background: #F7F5F0;
+  }
+  .comp-table th:first-child { width: 26%; }
+  .comp-table th.winner-col { background: #FDF8EE; color: var(--amber); }
+  .comp-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table td:first-child {
+    font-weight: 500;
+    color: var(--mid);
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+  .comp-table td.winner-col { background: #FFFBF2; }
+  .comp-table tr:hover td { background: rgba(0,0,0,0.015); }
+  .comp-table tr:hover td.winner-col { background: #FFF8E6; }
+
+  .tick { color: var(--green); font-weight: 500; }
+  .cross { color: var(--red); }
+  .dash { color: var(--muted); }
+  .warn { color: var(--amber); }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 1px;
+    font-weight: 500;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  .tag-green { background: var(--green-pale); color: var(--green); }
+  .tag-amber { background: var(--amber-pale); color: var(--amber); }
+  .tag-red { background: var(--red-pale); color: var(--red); }
+
+  /* ── SPEC CHECK TABLE ───────────────────── */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--rule);
+  }
+  .spec-table th {
+    padding: 10px 14px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule);
+    background: #F7F5F0;
+    text-align: left;
+  }
+  .spec-table th.center { text-align: center; }
+  .spec-table th.winner-col { background: #FDF8EE; color: var(--amber); }
+  .spec-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .spec-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--mid);
+    font-size: 11.5px;
+  }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table td.winner-col { background: #FFFBF2; }
+  .spec-icon { font-size: 15px; }
+
+  /* ── ISSUES ──────────────────────────────── */
+  .issues-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .issue-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 20px;
+  }
+  .issue-supplier {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .issue-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .issue-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .issue-dot.red { background: var(--red); }
+  .issue-dot.amber { background: var(--amber); }
+  .issue-dot.green { background: var(--green); }
+
+  /* ── RECOMMENDATION ─────────────────────── */
+  .rec-box {
+    background: var(--dark);
+    color: var(--white);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 4px;
+  }
+  .rec-left { }
+  .rec-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .rec-supplier {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-variant-numeric: lining-nums;
+  }
+  .rec-price {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    font-variant-numeric: lining-nums;
+  }
+  .rec-price-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+  .rec-right { }
+  .rec-rationale {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .rec-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rec-point {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+  }
+  .rec-point-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ──────────────────────────────── */
+  .footer {
+    padding: 20px 72px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-left { font-size: 11px; color: var(--muted); }
+  .footer-right { font-size: 10px; color: var(--rule); letter-spacing: 1px; }
+
+  @media print {
+    .cover { padding: 40px 52px 36px; }
+    .main { padding: 0 52px 52px; }
+    .footer { padding: 16px 52px; }
+    .price-card { break-inside: avoid; }
+    .rec-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-label">Quote Comparison &amp; Assessment</div>
+    <div class="cover-title">La Riviere<br><span>Building Identification Sign</span></div>
+    <div class="cover-sub">19 Cannes Ave, Surfers Paradise QLD 4217 &nbsp;·&nbsp; Non-illuminated 3D aluminium lettering</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Prepared for</div>
+        <div class="cover-meta-value">Body Corporate Committee<br>CTS 52693</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Prepared by</div>
+        <div class="cover-meta-value">Grant Ryan, Secretary</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Spec Issue Date</div>
+        <div class="cover-meta-value">9 March 2026</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Quotes Received</div>
+        <div class="cover-meta-value">3 of 3 suppliers</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Date of Report</div>
+        <div class="cover-meta-value">27 March 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 1. SIGN SPECIFICATION -->
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-title">Sign Specification</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="spec-overview">
+    <div class="spec-overview-grid">
+      <div class="spec-item"><span class="spec-label">Project</span><span class="spec-value">Non-illuminated building identification lettering</span></div>
+      <div class="spec-item"><span class="spec-label">Construction</span><span class="spec-value">Fabricated aluminium, enclosed backs, 30 mm return depth, fully welded</span></div>
+      <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Dulux Electro Fresh Gold Kinetic – Flat 9062208F · min 80–100 micron · clear topcoat</span></div>
+    </div>
+    <a class="card-pdf-link" href="https://drive.google.com/file/d/1hHtOOntkFXQ8K88qgK9egyM4XgVIECR8/view?usp=sharing" target="_blank" style="margin-top:20px; display:inline-flex;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><polyline points="9 9 10 9"/></svg>
+      View Sign Specification PDF
+    </a>
+  </div>
+
+  <!-- 2. PRICE SUMMARY -->
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-title">Price Summary</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="price-cards">
+
+    <div class="price-card winner">
+      <div class="card-supplier">SignSite Group</div>
+      <div class="card-name">Quote 53314 (revised 27 Mar)</div>
+      <div class="card-price">$5,244.80</div>
+      <div class="card-excl">inc. GST &nbsp;·&nbsp; $4,768.00 ex. GST</div>
+      <div class="card-divider"></div>
+      <div class="card-row"><span>Supply (letters)</span><strong>$2,649.00</strong></div>
+      <div class="card-row"><span>Installation (incl. removal)</span><strong>$2,119.00</strong></div>
+      <div class="card-row"><span>GST (10%)</span><strong>$476.80</strong></div>
+      <div class="card-divider"></div>
+      <div class="card-row"><span>Payment terms</span><strong>50 / 30 / 20%</strong></div>
+      <div class="card-row"><span>Quote valid</span><strong>22 Apr 2026</strong></div>
+      <div class="card-row"><span>Lead time</span><strong>~5 weeks from approval</strong></div>
+      <div class="card-quote-ref">QBCC #15154090 · ABN 21 620 267 085</div>
+      <div class="card-divider"></div>
+      <div class="card-contact">
+        <div class="card-contact-name">Samantha Meiers</div>
+        <div class="card-contact-detail"><a href="mailto:sam.meiers@signsite.com.au">sam.meiers@signsite.com.au</a></div>
+        <div class="card-contact-detail"><a href="https://www.signsite.com.au" target="_blank">www.signsite.com.au</a></div>
+      </div>
+      <a class="card-pdf-link" href="https://drive.google.com/file/d/14yb_QgNHH1Pz948ceeD4vMTiNB99lC3P/view?usp=sharing" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><polyline points="9 9 10 9"/></svg>
+        View Quote PDF
+      </a>
+    </div>
+
+    <div class="price-card">
+      <div class="card-supplier">Artline Signs</div>
+      <div class="card-name">Quote 2211</div>
+      <div class="card-price">$5,775.00</div>
+      <div class="card-excl">inc. GST &nbsp;·&nbsp; $5,250.00 ex. GST</div>
+      <div class="card-divider"></div>
+      <div class="card-row"><span>Supply &amp; Install (combined)</span><strong>$5,250.00</strong></div>
+      <div class="card-row"><span>GST (10%)</span><strong>$525.00</strong></div>
+      <div class="card-divider"></div>
+      <div class="card-row"><span>Payment terms</span><strong>50 / 40 / 10%</strong></div>
+      <div class="card-row"><span>Quote valid</span><strong>25 Apr 2026</strong></div>
+      <div class="card-row"><span>Lead time</span><strong>~4 weeks</strong></div>
+      <div class="card-quote-ref">Local Gold Coast supplier · ABN 88 682 364 870</div>
+      <div class="card-divider"></div>
+      <div class="card-contact">
+        <div class="card-contact-name">Nick Palmer</div>
+        <div class="card-contact-detail"><a href="mailto:nick@artlinesigns.com.au">nick@artlinesigns.com.au</a></div>
+        <div class="card-contact-detail"><a href="https://www.artlinesigns.com.au" target="_blank">www.artlinesigns.com.au</a></div>
+      </div>
+      <a class="card-pdf-link" href="https://drive.google.com/file/d/1nE6WqCN47SfJiuFoGwmvW4D0Yy8rkEMC/view?usp=sharing" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><polyline points="9 9 10 9"/></svg>
+        View Quote PDF
+      </a>
+    </div>
+
+    <div class="price-card">
+      <div class="card-supplier">Albert Smith Signs</div>
+      <div class="card-name">Quote 146724C</div>
+      <div class="card-price">$6,655.00</div>
+      <div class="card-excl">inc. GST &nbsp;·&nbsp; $6,050.00 ex. GST</div>
+      <div class="card-divider"></div>
+      <div class="card-row"><span>Supply (letters)</span><strong>$4,850.00</strong></div>
+      <div class="card-row"><span>Install + Logistics</span><strong>$1,200.00</strong></div>
+      <div class="card-row"><span>GST (10%)</span><strong>$605.00</strong></div>
+      <div class="card-divider"></div>
+      <div class="card-row"><span>Payment terms</span><strong>Payment with order</strong></div>
+      <div class="card-row"><span>Quote valid</span><strong>14 days from issue</strong></div>
+      <div class="card-row"><span>Lead time</span><strong>Not stated</strong></div>
+      <div class="card-quote-ref">145 yrs experience · ABN 42 345 973 910</div>
+      <div class="card-divider"></div>
+      <div class="card-contact">
+        <div class="card-contact-name">Hari Sathishchandra</div>
+        <div class="card-contact-detail"><a href="mailto:hsathishchandra@asgroup.com.au">hsathishchandra@asgroup.com.au</a></div>
+        <div class="card-contact-detail"><a href="https://www.albertsmithsigns.com.au" target="_blank">www.albertsmithsigns.com.au</a></div>
+      </div>
+      <a class="card-pdf-link" href="https://drive.google.com/file/d/1pn1E6xG8hORA0yxK39CVW5YTPW3aEZBW/view?usp=sharing" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><polyline points="9 9 10 9"/></svg>
+        View Quote PDF
+      </a>
+    </div>
+
+  </div>
+
+  
+
+  <!-- 3. SPECIFICATION COMPLIANCE -->
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-title">Specification Compliance</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Specification Requirement</th>
+        <th class="center winner-col">SignSite Group</th>
+        <th class="center">Artline Signs</th>
+        <th class="center">Albert Smith Signs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Non-illuminated only</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon warn">⚑</span> Template ref to "face to illuminate" — flagged &amp; being corrected</td>
+      </tr>
+      <tr>
+        <td>Fabricated aluminium letters</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span> 316L SS face &amp; returns</td>
+        <td><span class="spec-icon tick">✓</span> Marine grade Al</td>
+        <td><span class="spec-icon tick">✓</span> Marine grade Al</td>
+      </tr>
+      <tr>
+        <td>30 mm return depth</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>Enclosed backs</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>Concealed drainage / ventilation holes</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>Concealed stud fixing system</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>15 mm stand-off from wall</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>316 stainless steel studs + chemical anchors</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>Dulux Electro Fresh Gold Kinetic – Flat 9062208F</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon dash">—</span> Finish listed as TBC</td>
+      </tr>
+      <tr>
+        <td>Clear protective topcoat</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span> Added in revised quote</td>
+      </tr>
+      <tr>
+        <td>80–100 micron min coating thickness</td>
+        <td class="winner-col"><span class="spec-icon dash">—</span> Not stated</td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon dash">—</span> Not stated</td>
+      </tr>
+      <tr>
+        <td>Remove existing sign + make good</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>Coastal exposure suitability</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span></td>
+      </tr>
+      <tr>
+        <td>Correct letter sizing ("19" + "Cannes")</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span> Sizes confirmed</td>
+        <td><span class="spec-icon tick">✓</span></td>
+        <td><span class="spec-icon tick">✓</span> Sizes confirmed</td>
+      </tr>
+      <tr>
+        <td>Client to supply vector artwork</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span> Noted</td>
+        <td><span class="spec-icon tick">✓</span> Noted</td>
+        <td><span class="spec-icon tick">✓</span> Noted</td>
+      </tr>
+      <tr>
+        <td>QBCC builders licence (QLD requirement)</td>
+        <td class="winner-col"><span class="spec-icon tick">✓</span> #15154090</td>
+        <td><span class="spec-icon dash">—</span> Not referenced</td>
+        <td><span class="spec-icon dash">—</span> Not referenced</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. DETAILED COMPARISON -->
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-title">Detailed Comparison</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Criterion</th>
+        <th class="winner-col">SignSite Group</th>
+        <th>Artline Signs</th>
+        <th>Albert Smith Signs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total price (inc. GST)</td>
+        <td class="winner-col"><strong>$5,244.80</strong> <span class="tag tag-green">Lowest</span></td>
+        <td>$5,775.00 <span class="tag tag-amber">Mid</span></td>
+        <td>$6,655.00 <span class="tag tag-red">Highest</span></td>
+      </tr>
+      <tr>
+        <td>Saving vs highest quote</td>
+        <td class="winner-col"><strong>$1,410.20</strong></td>
+        <td>$880.00</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Payment structure</td>
+        <td class="winner-col">50% deposit · 30% pre-install · 20% on completion</td>
+        <td>50% deposit · 40% pre-install · 10% on completion</td>
+        <td>Payment with order (full upfront)</td>
+      </tr>
+      <tr>
+        <td>Warranty</td>
+        <td class="winner-col">12-month limited — parts, materials, UV damage</td>
+        <td>12 months — metal fabrication and paintwork (confirmed in T&amp;Cs). Claims must be raised within 7 days of installation.</td>
+        <td>Warranty "honoured the entire history of the company" — not formally scoped</td>
+      </tr>
+      <tr>
+        <td>Lead time</td>
+        <td class="winner-col">~1 week design/drawings, then ~4 weeks manufacture to install (from artwork approval)</td>
+        <td>~4 weeks from approval</td>
+        <td>Not stated — to be confirmed</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td class="winner-col">Brisbane (Brendale) — interstate travel costs possible</td>
+        <td>Gold Coast local (Coombabah) <span class="tag tag-green">Local</span></td>
+        <td>Brisbane (Bulimba) — travel noted in pricing</td>
+      </tr>
+      <tr>
+        <td>QBCC licence</td>
+        <td class="winner-col">Confirmed — #15154090</td>
+        <td>Not referenced in quote</td>
+        <td>Not referenced in quote</td>
+      </tr>
+      <tr>
+        <td>Letter material</td>
+        <td class="winner-col">316L stainless steel face &amp; returns</td>
+        <td>Marine grade aluminium</td>
+        <td>Marine grade aluminium</td>
+      </tr>
+      <tr>
+        <td>Finish specification</td>
+        <td class="winner-col">Dulux Electro Fresh Gold Kinetic – Flat ✓ + clear topcoat ✓</td>
+        <td>Dulux Electro Fresh Gold Kinetic – Flat ✓ + 80–100µm ✓ + clear topcoat ✓</td>
+        <td>Finish listed as TBC — requires confirmation</td>
+      </tr>
+      <tr>
+        <td>Removal of existing sign</td>
+        <td class="winner-col">Included — removal, clean off adhesive, paint to corners</td>
+        <td>Included in scope</td>
+        <td>Included in scope</td>
+      </tr>
+      <tr>
+        <td>Project management</td>
+        <td class="winner-col">Included</td>
+        <td>Implied in supply &amp; install scope</td>
+        <td>Included in inclusions list</td>
+      </tr>
+      <tr>
+        <td>Coloured artwork / pre-approval proof</td>
+        <td class="winner-col">Artwork proof prior to production</td>
+        <td>Install aligned on site with client</td>
+        <td>Coloured artwork for pre-approval included</td>
+      </tr>
+      <tr>
+        <td>Height access equipment</td>
+        <td class="winner-col">Excluded — site-specific</td>
+        <td>By foot/ladder (ground level — should be fine)</td>
+        <td>By Albert Smith Signs if needed</td>
+      </tr>
+      <tr>
+        <td>Site inspection before install</td>
+        <td class="winner-col">Included in installation line item</td>
+        <td>Implied (install aligned on site)</td>
+        <td>Not specifically mentioned</td>
+      </tr>
+      <tr>
+        <td>Quote validity</td>
+        <td class="winner-col">30 days (to 22 Apr 2026)</td>
+        <td>30 days (to 25 Apr 2026)</td>
+        <td>14 days only — may have lapsed</td>
+      </tr>
+      <tr>
+        <td>Exclusions of note</td>
+        <td class="winner-col">Height access · parking · council permits · engineering certs</td>
+        <td>Not itemised — terms referenced by link</td>
+        <td>Power shutdown · tiger tails · footpath permits · traffic management</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 5. ISSUES & FLAGS -->
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-title">Issues &amp; Flags by Supplier</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="issues-grid">
+
+    <div class="issue-card">
+      <div class="issue-supplier">SignSite Group — $5,244.80</div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Revised quote (27 Mar) now explicitly includes removal of the existing sign, clean-off of adhesive and paint to corners.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Lead time confirmed: approx. 1 week for design and construction drawing proofs, then approx. 4 weeks manufacture to install from artwork approval. Supplier has offered to accommodate a hard deadline if required.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot amber"></div>
+        <div>Brisbane-based supplier. Confirm any travel/logistics costs are absorbed in the quoted installation price.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Only supplier to proactively confirm QBCC builders licence — required by Queensland law for this scope.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Most favourable payment structure — final 20% only due on completion, protecting the Body Corporate.</div>
+      </div>
+    </div>
+
+    <div class="issue-card">
+      <div class="issue-supplier">Artline Signs — $5,775.00</div>
+      <div class="issue-item">
+        <div class="issue-dot amber"></div>
+        <div>QBCC builders licence not referenced in the quote or T&amp;Cs. Should be requested and confirmed before award — legally required for this work in Queensland.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Warranty formally confirmed via T&amp;Cs: 12 months on metal fabrication and paintwork. Note — defects must be reported within 7 days of installation or goods are deemed accepted.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot amber"></div>
+        <div>Payment terms per T&amp;Cs are 50/40/10 — the quote email stated "50% deposit, balance on completion" which understates the pre-install milestone. The 40% progress payment is due prior to installation.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Only Gold Coast-local supplier. Proximity means lower travel costs and easier site coordination.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>Most complete specification match — explicitly includes 80–100 micron coating thickness, clear topcoat and removal of existing sign.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot green"></div>
+        <div>4-week lead time stated — comparable to SignSite.</div>
+      </div>
+    </div>
+
+    <div class="issue-card">
+      <div class="issue-supplier">Albert Smith Signs — $6,655.00</div>
+      <div class="issue-item">
+        <div class="issue-dot red"></div>
+        <div>Highest price — $1,410.20 more than SignSite.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot red"></div>
+        <div>Quote validity is only 14 days from issue (18 March) — likely expired. A refreshed quote would be required if selected.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot red"></div>
+        <div>Payment with order (full upfront) — least favourable terms for the Body Corporate, particularly as title remains with Albert Smith until paid in full.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot amber"></div>
+        <div>Lettering finish listed as "TBC" — the Dulux colour specification must be confirmed before any acceptance.</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-dot amber"></div>
+        <div>Quote contained template errors (illumination reference, digital print/vinyl inclusion) requiring correction — revised quote 146724C addresses these.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 6. RECOMMENDATION -->
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-title">Assessment &amp; Recommendation</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="rec-box">
+    <div class="rec-left">
+      <div class="rec-label">Recommended Supplier</div>
+      <div class="rec-supplier">SignSite<br>Group</div>
+      <div style="height:16px;"></div>
+      <div class="rec-label">Quoted Price</div>
+      <div class="rec-price">$5,244.80</div>
+      <div class="rec-price-sub">inc. GST &nbsp;·&nbsp; Quote 53314 (revised 27 Mar)</div>
+      <div style="height:16px;"></div>
+      <div class="rec-label">Saving vs next quote</div>
+      <div style="font-family:'Libre Baskerville',serif; font-size:19px; font-weight:700; color:var(--gold-light); font-variant-numeric:lining-nums;">$530.20</div>
+      <div class="rec-price-sub">vs Artline Signs</div>
+    </div>
+    <div class="rec-right">
+      <div class="rec-rationale">
+        SignSite Group presents the strongest overall value proposition. Their revised quote of $5,244.80 is the lowest of the three and now explicitly includes removal of the existing sign and make-good. They are the only supplier to proactively address Queensland's QBCC licensing requirement — a legal prerequisite for this work. Their payment terms (50/30/20) are the most favourable, with the final payment only due on satisfactory completion.
+      </div>
+      <div class="rec-points">
+        <div class="rec-point">
+          <div class="rec-point-dot"></div>
+          <div>Lead time confirmed at approximately 5 weeks total — 1 week for design drawings from deposit, then 4 weeks manufacture to install from artwork approval. Samantha Meiers has offered to accommodate a hard deadline if the committee has a specific date in mind.</div>
+        </div>
+        <div class="rec-point">
+          <div class="rec-point-dot"></div>
+          <div>Albert Smith Signs is not recommended at this time. Their price is the highest of the three, their quote validity has likely lapsed and their payment terms are the least favourable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-left">Body Corporate for La Riviere on Cannes CTS 52693 &nbsp;·&nbsp; Building ID Sign — Quote Comparison &nbsp;·&nbsp; Prepared by Grant Ryan</div>
+  <div class="footer-right">CONFIDENTIAL — COMMITTEE USE ONLY</div>
+</div>
+
+</body>
+</html>
